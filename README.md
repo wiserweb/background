@@ -4,8 +4,7 @@ Allows Cordova apps to continue running in the background
 
 `meteor add hybrid:background`
 
-Most mobile operating systems are multitasking capable, but most apps dont need to run while in background and not present for the user. Therefore they pause the app in background mode and resume the app before switching to foreground mode.
-The system keeps all network connections open while in background, but does not deliver the data until the app resumes.
+Most mobile operating systems are multitasking capable, but most apps don't need to run while in background and not present for the user. Therefore, by default, they pause the app in background mode and resume the app before switching to foreground mode. The system keeps all network connections open while in background, but does not deliver the data until the app resumes.
 
 ### Supported Platforms
 * [x] iOS

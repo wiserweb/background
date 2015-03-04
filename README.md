@@ -12,15 +12,15 @@ Most mobile operating systems are multitasking capable, but most apps don't need
 * [x] Windows Phone 8
 * [ ] Windows Phone 8.1
 
-##### Enable Background Mode
+##### Enable background mode
 ```javascript
 BackgroundMode.enable();
 ```
-##### Disable Background Mode
+##### Disable background mode
 ```javascript
 BackgroundMode.disable();
 ```
-##### Check if Background Mode is enabled (reactive)
+##### Check if background mode is enabled (reactive)
 ```javascript
 BackgroundMode.enabled.get();
 ```

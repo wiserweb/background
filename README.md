@@ -1,75 +1,69 @@
-# Hybrid Device 
+# Hybrid Background
 
-Cross-platform device information
+Allows Cordova apps to continue running in the background
 
-`meteor add hybrid:device`
+`meteor add hybrid:background`
 
-## Browser
+Most mobile operating systems are multitasking capable, but most apps dont need to run while in background and not present for the user. Therefore they pause the app in background mode and resume the app before switching to foreground mode.
+The system keeps all network connections open while in background, but does not deliver the data until the app resumes.
 
-### Device info
-* Device.ua 
-* Device.browser
-  * name
-  * version
-  * major
-* Device.engine
-  * name
-  * version
-* Device.os
-  * name
-  * version
-* Device.device
-  * model
-  * type
-  * vendor
-* Device.cpu
-  * architecture
+### Supported Platforms
+* [x] iOS
+* [x] Android _(SDK >=11)_
+* [x] Windows Phone 8
+* [x] Windows Phone 8.1
 
-### Template Helpers
+##### Enable Background Mode
+```javascript
+BackgroundMode.enable();
 ```
-{{#if isInBrowsers 'Chrome,Firefox'}}
-	Special Feature
-{{/if}}
+##### Disable Background Mode
+```javascript
+BackgroundMode.disable();
+```
+##### Check if Background Mode is enabled (reactive)
+```javascript
+BackgroundMode.enabled.get();
+```
+##### Check if the app is currently running in the background (reactive)
+```javascript
+BackgroundMode.active.get();
 ```
 
+### Android customization
+To indicate that the app is executing tasks in background and being paused would disrupt the user, the plug-in has to create a notification while in background - like a download progress bar.
+
+#### Override defaults
+The title, ticker and text for that notification can be customized as follows:
+```javascript
+BackgroundMode.setDefaults({
+    title:  String,
+    ticker: String,
+    text:   String
+})
 ```
-{{#if isInOS 'Mac'}}
-	Special Feature
-{{/if}}
+
+By default the app will come to foreground when taping on the notification. That can be changed also.
+```javascript
+BackgroundMode.setDefaults({
+    resume: false
+})
 ```
 
+#### Modify the currently displayed notification
+It's also possible to modify the currently displayed notification while in background.
+```javascript
+BackgroundMode.configure({
+    title: String,
+    ...
+})
 ```
-{{#if isInEngine 'WebKit'}}
-	Special Feature
-{{/if}}
+
+#### Run in background without notification
+In silent mode the plugin will not display a notification - which is not the default. Be aware that Android recommends adding a notification otherwise the OS may pause the app.
+```javascript
+BackgroundMode.configure({
+    silent: true
+})
 ```
 
-### Meteor Booleans
-
-#### Browsers
-* `Meteor.isChrome`
-* `Meteor.isFirefox`
-
-#### Operating Systems
-* `Meteor.isMac`
-
-#### Browser Enginers
-* `Meteor.isWebKit`
-
-======================
-
-## Cordova
-
-### Device info
-* Device.cordova
-* Device.model
-* Device.platform
-* Device.uuid
-* Device.version
-
-======================
-
-## TODO
-* [ ] Finish Booleans
-* [ ] Finish Template Helpers# background
-# background

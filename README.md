@@ -10,7 +10,7 @@ Most mobile operating systems are multitasking capable, but most apps don't need
 * [x] iOS
 * [x] Android _(SDK >=11)_
 * [x] Windows Phone 8
-* [x] Windows Phone 8.1
+* [ ] Windows Phone 8.1
 
 ##### Enable Background Mode
 ```javascript

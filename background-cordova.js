@@ -1,6 +1,6 @@
 BackgroundMode = {
-	enabled: new ReactiveVar(false);
-	active: new ReactiveVar(false);
+	enabled: new ReactiveVar(false),
+	active: new ReactiveVar(false),
 	enable: function() {
 		cordova.plugins.backgroundMode.enable();
 		this.enabled.set(true);

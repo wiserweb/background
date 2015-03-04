@@ -12,6 +12,8 @@ Most mobile operating systems are multitasking capable, but most apps don't need
 * [x] Windows Phone 8
 * [ ] Windows Phone 8.1
 
+### Usage
+
 ##### Enable background mode
 ```javascript
 BackgroundMode.enable();

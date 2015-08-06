@@ -6,7 +6,7 @@ Package.describe({
 });
 
 Cordova.depends({
-  'de.appplant.cordova.plugin.background-mode':'0.6.3'
+  'de.appplant.cordova.plugin.background-mode':'0.6.4'
 });
 
 Package.onUse(function(api) {
